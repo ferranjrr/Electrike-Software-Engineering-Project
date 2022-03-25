@@ -3,10 +3,9 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 class GoogleLoginAdpt {
   static final _instance = GoogleLoginAdpt._internal();
-  var googleMapApiKey = "***REMOVED***";
   static final _clientIDWeb= "***REMOVED***";
   static final _clientIDAndroid = "***REMOVED***";
-  static final _googleSignIn = GoogleSignIn();
+  static final _googleSignIn = GoogleSignIn(clientId: _clientIDWeb);
 
   factory GoogleLoginAdpt() {
     return _instance;
@@ -16,18 +15,19 @@ class GoogleLoginAdpt {
   CtrlPresentation ctrlPresentation = CtrlPresentation();
 
   Future<GoogleSignInAccount?> login() {
+    print("aaaaaaaaaaaa\n\n\n\n");
       final user = _googleSignIn.signIn();
       user.then((u) {
         ctrlPresentation.name = u?.displayName;
         ctrlPresentation.email = u?.email;
         ctrlPresentation.photoUrl = u?.photoUrl;
-        print(ctrlPresentation.photoUrl);
+        print(u);
       });
       return user;
   }
 
   Future<GoogleSignInAccount?> logout() {
-    final user = _googleSignIn.disconnect();
+    final user = _googleSignIn.signOut();
     return user;
   }
 
