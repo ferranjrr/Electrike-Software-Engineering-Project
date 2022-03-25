@@ -6,7 +6,7 @@ class GoogleLoginAdpt {
   var googleMapApiKey = "***REMOVED***";
   static final _clientIDWeb= "***REMOVED***";
   static final _clientIDAndroid = "***REMOVED***";
-  static final _googleSignIn = GoogleSignIn(clientId: _clientIDWeb);
+  static final _googleSignIn = GoogleSignIn();
 
   factory GoogleLoginAdpt() {
     return _instance;
@@ -29,6 +29,10 @@ class GoogleLoginAdpt {
   Future<GoogleSignInAccount?> logout() {
     final user = _googleSignIn.disconnect();
     return user;
+  }
+
+  Future<bool> isSignIn() {
+    return _googleSignIn.isSignedIn();
   }
 
 
