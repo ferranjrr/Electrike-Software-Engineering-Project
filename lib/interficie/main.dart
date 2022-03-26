@@ -11,7 +11,7 @@ import 'widget/lateral_menu_widget.dart';
 
 Future main() async {
   CtrlDomain ctrlDomain = CtrlDomain();
-  ctrlDomain.initializeSystem();
+  await ctrlDomain.initializeSystem();
   GoogleMap.init('***REMOVED***');
   WidgetsFlutterBinding.ensureInitialized();
   setUpLocator();
