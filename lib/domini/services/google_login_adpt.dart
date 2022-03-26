@@ -1,11 +1,13 @@
+// ignore_for_file: import_of_legacy_library_into_null_safe
+
 import 'package:flutter_project/interficie/ctrl_presentation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/foundation.dart';
 
 class GoogleLoginAdpt {
   static final _instance = GoogleLoginAdpt._internal();
-  static final _clientIDWeb= "***REMOVED***";
-  static final _clientIDAndroid = "***REMOVED***";
+  static const _clientIDWeb= "***REMOVED***";
+  //static const _clientIDAndroid = "***REMOVED***";
 
   static final _googleSignInAndroid = GoogleSignIn();
   static final _googleSignInWeb = GoogleSignIn(clientId: _clientIDWeb);
@@ -18,34 +20,35 @@ class GoogleLoginAdpt {
   CtrlPresentation ctrlPresentation = CtrlPresentation();
 
   Future<GoogleSignInAccount?> login() {
-    var _googleSignIn;
-    if (defaultTargetPlatform == TargetPlatform.android) _googleSignIn = _googleSignInAndroid;
-    else _googleSignIn = _googleSignInWeb;
+    var _googleSignIn = _googleSignInWeb;
+    if (defaultTargetPlatform == TargetPlatform.android) {
+      _googleSignIn = _googleSignInAndroid;
+    }
 
-    print("aaaaaaaaaaaa\n\n\n\n");
       final user = _googleSignIn.signIn();
       user.then((u) {
         ctrlPresentation.name = u?.displayName;
         ctrlPresentation.email = u?.email;
         ctrlPresentation.photoUrl = u?.photoUrl;
-        print(u);
       });
       return user;
   }
 
   Future<GoogleSignInAccount?> logout() {
-    var _googleSignIn;
-    if (defaultTargetPlatform == TargetPlatform.android) _googleSignIn = _googleSignInAndroid;
-    else _googleSignIn = _googleSignInWeb;
+    var _googleSignIn = _googleSignInAndroid;
+    if (defaultTargetPlatform == TargetPlatform.android) {
+      _googleSignIn = _googleSignInAndroid;
+    }
 
     final user = _googleSignIn.signOut();
     return user;
   }
 
   Future<bool> isSignIn() {
-    var _googleSignIn;
-    if (defaultTargetPlatform == TargetPlatform.android) _googleSignIn = _googleSignInAndroid;
-    else _googleSignIn = _googleSignInWeb;
+    var _googleSignIn = _googleSignInWeb;
+    if (defaultTargetPlatform == TargetPlatform.android) {
+      _googleSignIn = _googleSignInAndroid;
+    }
 
     return _googleSignIn.isSignedIn();
   }
