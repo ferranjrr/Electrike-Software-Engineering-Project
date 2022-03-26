@@ -6,7 +6,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 class GoogleLoginAdpt {
   static final _instance = GoogleLoginAdpt._internal();
   static const _clientIDWeb= "***REMOVED***";
-  static const _clientIDAndroid = "***REMOVED***";
+  //static const _clientIDAndroid = "***REMOVED***";
   static final _googleSignIn = GoogleSignIn(clientId: _clientIDWeb);
 
   factory GoogleLoginAdpt() {
