@@ -31,6 +31,8 @@ void main() => runApp(const SplashScreen());
 Future initializeSystem() async {
   CtrlDomain ctrlDomain = CtrlDomain();
 
+  NotificationService().init();
+
   await ctrlDomain.initializeSystem();
   GoogleMap.init('***REMOVED***');
   WidgetsFlutterBinding.ensureInitialized();
