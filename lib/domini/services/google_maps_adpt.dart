@@ -3,7 +3,7 @@ import 'package:google_geocoding_api/google_geocoding_api.dart';
 
 class GoogleMapsAdpt {
   static final _instance = GoogleMapsAdpt._internal();
-  static const googleMapApiKey = "AIzaSyBN9tjrv5YdkS1K-E1xP9UVLEkSnknU0yY";
+  static const googleMapApiKey = "***REMOVED***";
   var googleGeocoding = GoogleGeocodingApi(googleMapApiKey);
 
   factory GoogleMapsAdpt() {

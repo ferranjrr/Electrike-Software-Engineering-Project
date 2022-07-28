@@ -4,8 +4,8 @@ import 'package:flutter/foundation.dart';
 
 class GoogleLoginAdpt {
   static final _instance = GoogleLoginAdpt._internal();
-  static const _clientIDWeb= "709547016796-vquhm8fbjkg0nlod6fpek1qhrb5c0ohr.apps.googleusercontent.com";
-  //static const _clientIDAndroid = "709547016796-1449erc1a454q58phc97hgcp2jvrtlf0.apps.googleusercontent.com";
+  static const _clientIDWeb= "***REMOVED***";
+  //static const _clientIDAndroid = ***REMOVED***;
 
   static final _googleSignInAndroid = GoogleSignIn(scopes: [
     'email',
