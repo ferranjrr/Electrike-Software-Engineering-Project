@@ -8,3 +8,5 @@
 - Peilin Ni : [peilinni16](https://github.com/peilinni16)
 - Victor Asenjo Carvajal : [victor-asenjo](https://github.com/victor-asenjo)
 - Xavier Coll Ribas : [XcollR](https://github.com/XcollR)
+
+**Final mark: 9.5 out of 10.**
